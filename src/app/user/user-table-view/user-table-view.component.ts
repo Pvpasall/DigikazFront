@@ -11,6 +11,9 @@ export class UserTableViewComponent {
 
   users: User[] = [];
 
+  displayedColumns: string[] = ['id', 'name', 'email'];
+
+
   constructor(private userService: UserService) {}
   
   ngOnInit(): void {
