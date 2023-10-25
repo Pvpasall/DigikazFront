@@ -9,10 +9,17 @@ import { UserTableViewComponent } from './user/user-table-view/user-table-view.c
 import { PostViewComponent } from './post/post-view/post-view.component';
 import { PostService } from './post/post.service';
 
-import {MatTableModule} from '@angular/material/table';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { animation } from '@angular/animations';
+
+import { PostCreateComponent } from './post/post-create/post-create.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,14 +28,20 @@ import { animation } from '@angular/animations';
   declarations: [
     AppComponent,
     UserTableViewComponent,
-    PostViewComponent
+    PostViewComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     MatTableModule,
     MatTabsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+
   ],
   providers: [UserService, PostService],
   bootstrap: [AppComponent]
