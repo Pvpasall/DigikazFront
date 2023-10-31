@@ -10,15 +10,16 @@ import { UserService } from '../user.service';
 export class UserTableViewComponent {
 
   users: User[] = [];
-
+  isUsersLoading: Boolean = true;
   displayedColumns: string[] = ['id', 'name', 'email'];
 
 
-  constructor(private userService: UserService) {}
-  
+  constructor(private userService: UserService) { }
+
   ngOnInit(): void {
     this.userService.getUsers().subscribe(users => {
       this.users = users;
+      this.isUsersLoading = false;
     });
   }
 

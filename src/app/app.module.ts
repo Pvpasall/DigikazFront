@@ -9,6 +9,11 @@ import { UserTableViewComponent } from './user/user-table-view/user-table-view.c
 import { PostViewComponent } from './post/post-view/post-view.component';
 import { PostService } from './post/post.service';
 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,6 +25,11 @@ import { animation } from '@angular/animations';
 import { PostCreateComponent } from './post/post-create/post-create.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginFormComponent } from './auth/login-form/LoginFormComponent';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { TopBarComponent } from './common/top-bar/top-bar.component';
+import { SpinnerComponent } from './common/spinner/spinner.component';
 
 
 
@@ -27,20 +37,32 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    UserTableViewComponent,
+    LoginFormComponent,
     PostViewComponent,
-    PostCreateComponent
+    TopBarComponent,
+    PostCreateComponent,
+    UserTableViewComponent,
+    SpinnerComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
-    MatTableModule,
-    MatTabsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    RouterModule,
+    MatTableModule,
+    MatTabsModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatSlideToggleModule,
+
+
 
   ],
   providers: [UserService, PostService],

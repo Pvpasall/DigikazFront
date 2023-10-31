@@ -2,12 +2,12 @@
     {
         "id": 1,
         "name": "pvpa",
-        "email": "papa@test.com"
+        "username": "papa"
     }
 ,
     {
         "id": 2,
         "name": "jules",
-        "email": "jules@test.com"
+        "username": "jules"
     }
 ]

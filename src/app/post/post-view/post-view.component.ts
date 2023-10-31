@@ -10,14 +10,21 @@ import { Post } from 'src/app/interfaces/post.interface';
 export class PostViewComponent {
 
   posts: Post[] = [];
-  
-  
-  constructor(private postService: PostService ) {}
-  
+  isPostsLoading: Boolean = true;
+  showCreatePost: boolean = true;
+
+  constructor(private postService: PostService) { }
+
   ngOnInit(): void {
     this.postService.getPosts().subscribe(posts => {
       this.posts = posts;
+      this.isPostsLoading = false;
     });
   }
-  
+
+
+  toggleCreatePost() {
+    this.showCreatePost = !this.showCreatePost;
+  }
+
 }

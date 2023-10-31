@@ -1,4 +1,4 @@
-<div>
+<div class="create-post-form-container">
     <h2>Create Post</h2>
     <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
 
@@ -29,6 +29,10 @@
             {{errorMessage}}
         </div>
 
-        <button mat-raised-button type="submit" [disabled]="postForm.invalid" color="primary">Créer Post</button>
+        <div>
+            <button mat-raised-button type="submit" [disabled]="postForm.invalid" color="primary">
+                Créer Post
+            </button>
+        </div>
     </form>
 </div>
