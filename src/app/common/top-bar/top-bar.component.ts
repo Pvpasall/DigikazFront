@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class TopBarComponent {
 
+  isLoged: Boolean = false;
+
   constructor(private router: Router, private authService: AuthService) { }
 
   navigateToHome() {
@@ -23,9 +25,18 @@ export class TopBarComponent {
     this.router.navigate(['/posts']);
   }
 
+  navigateToLogin() {
+    this.router.navigate(['/login']);
+  }
+
   navigateToLogout() {
     this.authService.logout();
-    this.router.navigate(['/']);
+    window.location.href = ('/login');
+    // this.router.navigate(['/login']);
+  }
+
+  ngOnInit(): void {
+    this.isLoged = this.authService.getToken()?.length == 228;
   }
 
 }

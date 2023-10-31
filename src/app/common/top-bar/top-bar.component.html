@@ -17,8 +17,11 @@
         </button>
         <span class="example-spacer"></span>
 
-        <button mat-button (click)="navigateToLogout()">
+        <button *ngIf="isLoged" mat-button (click)="navigateToLogout()">
             <mat-icon aria-hidden="false" fontIcon="logout"></mat-icon>
+        </button>
+        <button *ngIf="!isLoged" mat-button (click)="navigateToLogin()">
+            <mat-icon aria-hidden="false" fontIcon="login"></mat-icon>
         </button>
     </mat-toolbar>
 </div>
