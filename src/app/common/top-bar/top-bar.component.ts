@@ -25,6 +25,10 @@ export class TopBarComponent {
     this.router.navigate(['/posts']);
   }
 
+  navigateToProperties() {
+    this.router.navigate(['/properties']);
+  }
+
   navigateToLogin() {
     this.router.navigate(['/login']);
   }
