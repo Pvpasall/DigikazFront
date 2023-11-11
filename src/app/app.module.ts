@@ -9,6 +9,7 @@ import { UserTableViewComponent } from './user/user-table-view/user-table-view.c
 import { PostViewComponent } from './post/post-view/post-view.component';
 import { PostService } from './post/post.service';
 
+import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,6 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { TopBarComponent } from './common/top-bar/top-bar.component';
 import { SpinnerComponent } from './common/spinner/spinner.component';
+import { PropertiesViewComponent } from './properties/properties-view/properties-view.component';
+import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
 
 
 
@@ -43,6 +46,8 @@ import { SpinnerComponent } from './common/spinner/spinner.component';
     PostCreateComponent,
     UserTableViewComponent,
     SpinnerComponent,
+    PropertiesViewComponent,
+    PropertiesCreateComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -61,7 +66,7 @@ import { SpinnerComponent } from './common/spinner/spinner.component';
     MatIconModule,
     MatProgressSpinnerModule,
     MatSlideToggleModule,
-
+    MatSelectModule,
 
 
   ],

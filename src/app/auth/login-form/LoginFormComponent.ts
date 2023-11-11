@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginFormComponent implements OnInit {
 
+    isLoginLoading: Boolean = true;
     loginForm: FormGroup;
     errorMessage: string = '';
 
@@ -22,7 +23,9 @@ export class LoginFormComponent implements OnInit {
 
     }
     ngOnInit(): void {
-        // throw new Error('Method not implemented.');
+        setTimeout(() => {
+            this.isLoginLoading = false;
+        }, 100);
     }
 
     onSubmit() {
@@ -32,7 +35,6 @@ export class LoginFormComponent implements OnInit {
 
         this.authService.login(username, password).subscribe(
             (response) => {
-                console.log(response);
                 this.authService.setToken(response.access)
                 window.location.href = ('/posts')
             },
