@@ -9,6 +9,8 @@ export class AuthService {
 
   djangourl = 'http://127.0.0.1:8000/token/';
   private token: string | null = null;
+  private tokenDecode: string | string = '';
+  private userId: number | null = null;
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +21,10 @@ export class AuthService {
     }
 
     return this.http.post(this.djangourl, requestBody)
+  }
+
+  getTokenForDecode(): string {
+    return this.tokenDecode;
   }
 
   getToken(): string | null {

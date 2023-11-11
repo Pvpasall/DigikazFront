@@ -1,3 +1,5 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
+
 <div class="create-property-container">
     <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
         <mat-card>
@@ -10,6 +12,9 @@
                     <mat-label>Titre</mat-label>
                     <input id="title" matInput placeholder="Titre de la Propriété" required>
                 </mat-form-field>
+                <div *ngIf="propertyForm.get('title')?.hasError('invalidTitle')">
+                    This field is required.
+                </div>
                 <mat-form-field>
                     <mat-label>Lieu</mat-label>
                     <input matInput type="text" id="location" required>
@@ -37,9 +42,6 @@
                     Créer la Propriété
                 </button>
             </mat-card-actions>
-            <mat-card-footer>
-                Footer
-            </mat-card-footer>
         </mat-card>
     </form>
 </div>

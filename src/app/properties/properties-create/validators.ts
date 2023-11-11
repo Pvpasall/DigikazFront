@@ -5,7 +5,7 @@ export class CustomPropertyFormValidators {
 
     static titleValidator(control: AbstractControl): ValidationErrors | null {
         const value = control.value;
-        if (value.length > 255) {
+        if (value && (value.length > 255 && value.length < 5)) {
             return { invalidTitle: true }
         }
 
