@@ -1,7 +1,7 @@
 export interface Property {
     title: string,
     description: string,
-    userId: number,
+    // userId: number,
     location: string,
     price: number,
     property_type: string,

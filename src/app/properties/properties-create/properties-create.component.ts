@@ -20,15 +20,14 @@ export class PropertiesCreateComponent {
 
   constructor(private fb: FormBuilder, private propertyService: PropertyService, private authService: AuthService) {
 
-
     this.propertyForm = this.fb.group({
-      title: [null, [Validators.required, CustomPropertyFormValidators.titleValidator]],
+      title: [[Validators.required, CustomPropertyFormValidators.titleValidator]],
       // userId: userId,
-      description: ['', [Validators.required, CustomPropertyFormValidators.descriptionValidator]],
-      location: ['', Validators.required],
-      price: [0, [Validators.required, Validators.min(0), CustomPropertyFormValidators.priceValidator]],
+      description: [[Validators.required, CustomPropertyFormValidators.descriptionValidator]],
+      location: [Validators.required],
+      price: [[Validators.required, Validators.min(0), CustomPropertyFormValidators.priceValidator]],
       property_type: ['studio', Validators.required],
-      size: [0, [Validators.required, Validators.min(0)]]
+      size: [[Validators.required, Validators.min(0)]]
     });
   }
 

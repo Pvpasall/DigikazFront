@@ -31,9 +31,9 @@ export class PropertyService {
   }
 
   createProperty(property: Property, headers?: HttpHeaders): Observable<Property> {
-    const token = this.authService.getTokenForDecode();
+    // const token = this.authService.getTokenForDecode();
     // const decodetoken = jwtDecode(token);
-    console.log(token);
+    // console.log(token);
 
     // property.userId = decodetoken;
 
