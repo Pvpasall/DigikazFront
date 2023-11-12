@@ -33,4 +33,4 @@ Ce projet utilise Git pour le contrôle de version. Assurez-vous de créer des b
 
 ## Aides supplémentaires
 
-Pour obtenir plus d'aide sur Angular CLI, utilisez 'ng help' ou consultez la page `https://angular.io/cli`.
+Pour obtenir plus d'aide sur Angular CLI, utilisez `ng help` ou consultez la page `https://angular.io/cli`.
