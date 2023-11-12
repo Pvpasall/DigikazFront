@@ -34,6 +34,7 @@ import { SpinnerComponent } from './common/spinner/spinner.component';
 import { PropertiesViewComponent } from './properties/properties-view/properties-view.component';
 import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -69,6 +70,7 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
     MatProgressSpinnerModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatPaginatorModule,
 
 
   ],
