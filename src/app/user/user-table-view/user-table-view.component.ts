@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { User } from 'src/app/interfaces/user.interface';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-table-view',
@@ -10,19 +11,45 @@ import { Router } from '@angular/router';
 })
 export class UserTableViewComponent {
 
+  mySearch: FormGroup;
   users: User[] = [];
   isUsersLoading: boolean = true;
   displayedColumns: string[] = ['id', 'username', 'email', 'isloc', 'action'];
+  searchTerm: string = '';
 
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
+    this.mySearch = this.fb.group({
+      search: ['']
+    })
+  }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe(users => {
+    this.userService.fetchAllUsers();
+    // Subscribe to the observable for users
+    this.userService.getAllUsers().subscribe(users => {
       this.users = users;
-      // console.log(this.users);
-
       this.isUsersLoading = false;
+    });
+  }
+
+  searchUsers(): void {
+    const searchTerm = this.mySearch.get('search')?.value;
+    if (!searchTerm) {
+      this.userService.getUsers().subscribe(users => {
+        this.users = users;
+      });
+      return;
+    }
+
+    this.userService.getUsers().subscribe(users => {
+      const filteredUsers = users.filter(user =>
+        user.id.toString().includes(searchTerm)
+      );
+
+      this.users = filteredUsers;
+
+      console.log('filteredUsers', filteredUsers)
     });
   }
 
@@ -57,6 +84,5 @@ export class UserTableViewComponent {
       console.log('No OK');
     }
   }
-
 
 }
