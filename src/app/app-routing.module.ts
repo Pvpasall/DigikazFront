@@ -9,8 +9,13 @@ import { LoginFormComponent } from './auth/login-form/LoginFormComponent';
 import { PropertiesViewComponent } from './properties/properties-view/properties-view.component';
 import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
+import { HomeViewComponent } from './home/home-view/home-view.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomeViewComponent,
+  },
   {
     path: 'login',
     component: LoginFormComponent,

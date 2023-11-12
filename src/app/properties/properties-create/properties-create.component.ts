@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PropertyService } from '../property.service';
 import { CustomPropertyFormValidators } from './validators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-properties-create',
@@ -13,8 +14,11 @@ export class PropertiesCreateComponent {
   propertyForm: FormGroup;
   errorMessage: string = "";
   selectedFiles: File[] = [];
+  isCreatePropertyLoading: boolean = true;
 
-  constructor(private fb: FormBuilder, private propertyService: PropertyService) {
+
+
+  constructor(private fb: FormBuilder, private propertyService: PropertyService, private router: Router) {
     this.propertyForm = this.fb.group({
       title: [[Validators.required, CustomPropertyFormValidators.titleValidator]],
       description: [[Validators.required, CustomPropertyFormValidators.descriptionValidator]],
@@ -27,6 +31,16 @@ export class PropertiesCreateComponent {
 
   onFileSelected(event: any) {
     this.selectedFiles = event.target.files;
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isCreatePropertyLoading = false;
+    }, 100);
+  }
+
+  viewProperties() {
+    this.router.navigate(['/properties']);
   }
 
   onSubmit() {

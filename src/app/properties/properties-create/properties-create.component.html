@@ -1,7 +1,14 @@
-<div class="create-property-container">
+<app-spinner *ngIf="isCreatePropertyLoading"></app-spinner>
+
+<div class="list-property-button">
+    <button mat-fab extended color="primary" (click)="viewProperties()">
+        <mat-icon>view_list</mat-icon> Properties List
+    </button>
+</div>
+
+<div class="create-property-form-container">
     <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
         <mat-card>
-            <img matCardImage src="" alt="logo">
             <mat-card-header>
                 <mat-card-title>Créer une Propriété</mat-card-title>
             </mat-card-header>
@@ -34,12 +41,9 @@
             </mat-card-content>
             <mat-card-actions>
                 <button mat-raised-button color="primary" type="submit">
-                    Créer la Propriété
+                    Create Property
                 </button>
             </mat-card-actions>
-            <mat-card-footer>
-                Footer
-            </mat-card-footer>
         </mat-card>
     </form>
 </div>

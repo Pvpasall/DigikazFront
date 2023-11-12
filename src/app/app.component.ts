@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'estiam-front';
+  title = 'Digikaz';
+  isHomeLoading: boolean = true;
+
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isHomeLoading = false;
+    }, 100);
+  }
 }

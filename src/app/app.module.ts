@@ -35,6 +35,7 @@ import { PropertiesViewComponent } from './properties/properties-view/properties
 import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { HomeViewComponent } from './home/home-view/home-view.component';
 
 
 
@@ -51,6 +52,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     PropertiesViewComponent,
     PropertiesCreateComponent,
     UserCreateComponent,
+    HomeViewComponent,
   ],
   imports: [
     AppRoutingModule,

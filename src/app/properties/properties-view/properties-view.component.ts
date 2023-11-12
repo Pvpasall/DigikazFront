@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PropertyService } from '../property.service';
 import { Property } from 'src/app/interfaces/property.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-properties-view',
@@ -9,20 +10,22 @@ import { Property } from 'src/app/interfaces/property.interface';
 })
 export class PropertiesViewComponent {
 
+  isPropertyLoading: boolean = true;
   properties: Property[] = [];
 
-  constructor(private propertyService: PropertyService) { }
+  constructor(private propertyService: PropertyService, private router: Router) { }
 
   ngOnInit(): void {
     this.propertyService.getProperties().subscribe(
       properties => {
         this.properties = properties;
+        this.isPropertyLoading = false;
       }
     )
   }
 
-  addProperty(): string {
-    return window.location.href = "/add-property";
+  addProperty() {
+    this.router.navigate(["/add-property"]);
   }
 
 
