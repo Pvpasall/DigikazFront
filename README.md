@@ -1,27 +1,36 @@
-# EstiamFront
+# Gestion de location : DIGIKAZ
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+Ce projet a été généré avec Angular CLI version 16.1.4.
 
-## Development server
+## Exécution
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Pour lancer le serveur de développement, utilisez la commande 'ng serve'.
+Le serveur sera disponible à l'adresse `http://localhost:4200/`. L'application se rechargera automatiquement si vous modifiez l'un des fichiers source.
 
-## Code scaffolding
+## Scaffolding de code
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Exécutez 'ng generate component nom-du-composant' pour générer un nouveau composant.
 
-## Build
+## Construction
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Exécutez 'ng build' pour construire le projet. Les artefacts de construction seront stockés dans le répertoire dist/.
 
-## Running unit tests
+## API utilisée
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Nous avons utilisé une API qui a déjà été développé avec Django Rest Framework. Vous pouvez utiliser des fausses API dans cette page 'https://fakeapi.platzi.com/en/rest/auth-jwt'.
 
-## Running end-to-end tests
+## Tests unitaires
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Ce projet comprend des tests unitaires. Vous pouvez les exécuter avec la commande 'ng test';
 
-## Further help
+## Exécution des tests de bout en bout
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Exécutez 'ng e2e' pour exécuter les tests de bout en bout via une plateforme de votre choix. Pour utiliser cette commande, vous devez d'abord ajouter un package qui implémente des capacités de test de bout en bout.
+
+## Versioning avec Git
+
+Ce projet utilise Git pour le contrôle de version. Assurez-vous de créer des branches de fonctionnalités et de fusionner vos modifications de manière ordonnée.
+
+## Aides supplémentaires
+
+Pour obtenir plus d'aide sur Angular CLI, utilisez 'ng help' ou consultez la page 'https://angular.io/cli'
