@@ -14,11 +14,15 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]> {
-    this.users$ = this.http.get<User[]>(`${this.apiHost}/users/`).pipe(
+    this.users$ = this.http.get<User[]>(`${this.apiHost}users/`).pipe(
       map((response: any) => response.results)
     );
 
     return this.users$;
+  }
+
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.apiHost}users/`, user);
   }
 
 }

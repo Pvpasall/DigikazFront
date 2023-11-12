@@ -33,6 +33,7 @@ import { TopBarComponent } from './common/top-bar/top-bar.component';
 import { SpinnerComponent } from './common/spinner/spinner.component';
 import { PropertiesViewComponent } from './properties/properties-view/properties-view.component';
 import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
 
 
 
@@ -48,6 +49,7 @@ import { PropertiesCreateComponent } from './properties/properties-create/proper
     SpinnerComponent,
     PropertiesViewComponent,
     PropertiesCreateComponent,
+    UserCreateComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -8,6 +8,7 @@ import { UserTableViewComponent } from "./user/user-table-view/user-table-view.c
 import { LoginFormComponent } from './auth/login-form/LoginFormComponent';
 import { PropertiesViewComponent } from './properties/properties-view/properties-view.component';
 import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
 
 const routes: Routes = [
   {
@@ -21,8 +22,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'posts',
-    component: PostViewComponent,
+    path: 'add-user',
+    component: UserCreateComponent,
     canActivate: [AuthGuard],
   },
   {
