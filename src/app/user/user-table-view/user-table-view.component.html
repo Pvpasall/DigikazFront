@@ -5,6 +5,15 @@
     <mat-icon>add</mat-icon> Users
   </button>
 </div>
+<div>
+  <form [formGroup]="mySearch" (ngSubmit)="searchUsers()">
+    <mat-form-field appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput formControlName="search" [value]="searchTerm" placeholder="Enter search term">
+    </mat-form-field>
+    <button mat-button>Search</button>
+  </form>
+</div>
 
 <table mat-table [dataSource]="users" class="mat-elevation-z8">
 
