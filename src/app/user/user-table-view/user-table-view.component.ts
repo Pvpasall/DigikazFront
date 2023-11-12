@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { User } from 'src/app/interfaces/user.interface';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+
+
 
 @Component({
   selector: 'app-user-table-view',
@@ -10,6 +13,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./user-table-view.component.css']
 })
 export class UserTableViewComponent {
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  // pageSize = 1;
+  pageIndex = 1;
+  pageSizeOptions: number[] = [2, 5, 10, 20];
+  totalUsersCount!: number;
 
   mySearch: FormGroup;
   users: User[] = [];
@@ -30,6 +40,23 @@ export class UserTableViewComponent {
     this.userService.getAllUsers().subscribe(users => {
       this.users = users;
       this.isUsersLoading = false;
+    });
+
+    console.log(this.loadUsers());
+    this.loadUsers();
+  }
+
+  loadUsers(): void {
+    this.userService.getPaginatedUsers(this.pageIndex).subscribe({
+      next: (result) => {
+        this.users = result.results;
+        this.totalUsersCount = result.count;
+        this.isUsersLoading = false;
+      },
+      error: (error) => {
+        console.error('Error loading users', error);
+        this.isUsersLoading = false;
+      }
     });
   }
 
