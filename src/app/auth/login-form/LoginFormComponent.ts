@@ -36,7 +36,7 @@ export class LoginFormComponent implements OnInit {
         this.authService.login(username, password).subscribe(
             (response) => {
                 this.authService.setToken(response.access)
-                window.location.href = ('/posts')
+                window.location.href = ('/')
             },
             (error) => {
                 console.log(error);
